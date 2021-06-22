@@ -16,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync build/ s3://sandbox-hands-on-terraform-web-s3 --acl public-read"
+    "deploy": "aws s3 sync build/ s3://sandbox-hands-on-terraform-web-s3 --acl public-read",
+    "private-deploy": "aws s3 sync build/ s3://sandbox-hands-on-terraform-web-s3 --acl private"
   },
   "eslintConfig": {
     "extends": [
