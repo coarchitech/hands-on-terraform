@@ -2,10 +2,16 @@
 
 
 - [Hands On Terraform](#hands-on-terraform)
+  - [Architecture Context](#architecture-context)
   - [Create Your Infraestructure](#create-your-infraestructure)
   - [Deploy React App](#deploy-react-app)
     - [Update package.json](#update-packagejson)
     - [Compile and Deploy](#compile-and-deploy)
+
+
+## Architecture Context
+
+![Multicloud Terraform Provisioning](img/Coarchitech-HandsOnTerraform-v1.0.0.jpg "Multicloud Terraform Provisioning")
 
 
 ## Create Your Infraestructure
