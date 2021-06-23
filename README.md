@@ -55,7 +55,7 @@ In the root folder of your react application execute the following command:
 
 Using the Azure project inside the repository you can Deploy all the infrastructure required for deploy a simple serverless function in Azure.
 
-Project Structure:
+Project structure:
 
 ```bash
 └───azure
@@ -109,4 +109,4 @@ Inside Azure folder
     terraform apply
 ```
 
-Note: You must be logged in azure portal using azure cli or azure pluging and being selected the subscriptio befor running the commands.
+Note: You must be logged in azure portal using azure cli or azure pluging and being selected the subscription before running the commands.
