@@ -11,7 +11,7 @@
 
 ## Architecture Context
 
-![Multicloud Terraform Provisioning](img/Coarchitech-HandsOnTerraform-v1.0.0.jpg "Multicloud Terraform Provisioning")
+![Multicloud Terraform Provisioning](img/Coarchitech-HandsOnTerraform-v1.0.0.png "Multicloud Terraform Provisioning")
 
 
 ## Create Your Infraestructure
