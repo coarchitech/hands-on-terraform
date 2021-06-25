@@ -18,3 +18,9 @@ output "website_endpoint" {
   value       = module.bucket_web.website_endpoint
   description = "The website endpoint, if the bucket is configured with a website. If not, this will be an empty string."
 }*/
+
+
+output "https_trigger_url"{
+    value = module.gcp.https_trigger_url
+    description = "https_trigger_url"
+}

@@ -30,7 +30,7 @@ resource "google_cloudfunctions_function" "function_tracer" {
   source_archive_object = "${google_storage_bucket_object.bucket_stage.name}"
 }
 
-/*
+
 # IAM entry for all users to invoke the function
 resource "google_cloudfunctions_function_iam_member" "invoker" {
   project        = google_cloudfunctions_function.function_tracer.project
@@ -39,5 +39,4 @@ resource "google_cloudfunctions_function_iam_member" "invoker" {
 
   role   = "roles/cloudfunctions.invoker"
   member = "allUsers"
-  depends_on = [google_cloudfunctions_function.function_tracer]
-}*/
+}
