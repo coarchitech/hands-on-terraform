@@ -1,26 +1,12 @@
-/*output "bucket_regional_domain_name" {
-  value       = module.bucket_web.bucket_regional_domain_name
-  description = "The bucket region-specific domain name. The bucket domain name including the region name"
-}
-output "bucket_domain_name" {
-  value       = module.bucket_web.bucket_domain_name
-  description = "The bucket domain name. Will be of format bucketname.s3.amazonaws.com"
-}
-output "bucket_id" {
-  value       = module.bucket_web.bucket_id
-  description = "The name of the bucket"
-}
-output "bucket_arn" {
-  value       = module.bucket_web.bucket_arn
-  description = "The ARN of the bucket. Will be of format arn:aws:s3:::bucketname"
-}
-output "website_endpoint" {
-  value       = module.bucket_web.website_endpoint
+output "aws_website_endpoint" {
+  value       = module.aws_s3_bucket.website_endpoint
   description = "The website endpoint, if the bucket is configured with a website. If not, this will be an empty string."
-}*/
-
-
-output "https_trigger_url"{
-    value = module.gcp.https_trigger_url
-    description = "https_trigger_url"
+}
+output "gcp_https_trigger_url" {
+  value       = module.gcp_function.https_trigger_url
+  description = "URL which triggers function execution. Returned only if trigger_http is used."
+}
+output "azure_default_function_hostname" {
+  value       = module.azure_function.function_app_default_hostname
+  description = "Deployed function app hostname"
 }

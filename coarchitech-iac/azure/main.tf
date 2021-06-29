@@ -1,35 +1,35 @@
 resource "azurerm_resource_group" "rg" {
-  name     = "${var.prefix}-${var.environment}-rg"
-  location = var.location
+  name     = "${var.environment}-${var.project}-rg"
+  location = var.region
 }
+
 resource "azurerm_storage_account" "storage" {
   name                     = random_string.storage_name.result
   resource_group_name      = azurerm_resource_group.rg.name
-  location                 = var.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+  location                 = var.region
+  account_tier             = var.account_tier
+  account_replication_type = var.account_replication_type
 }
 
 resource "azurerm_app_service_plan" "asp" {
-  name                = "${var.prefix}-plan"
+  name                = "${var.environment}-${var.project}-plan"
   resource_group_name = azurerm_resource_group.rg.name
-  location            = var.location
-  kind                = "FunctionApp"
+  location            = var.region
+  kind                = var.kind
   sku {
-    tier = "Dynamic"
-    size = "Y1"
+    tier = var.tier
+    size = var.size
   }
 }
 
 resource "azurerm_function_app" "functions" {
-  name                       = "${var.prefix}-${var.environment}-app-function"
-  location                   = var.location
+  name                       = "${var.environment}-${var.project}-app-function"
+  location                   = var.region
   resource_group_name        = azurerm_resource_group.rg.name
   app_service_plan_id        = azurerm_app_service_plan.asp.id
   storage_account_name       = azurerm_storage_account.storage.name
   storage_account_access_key = azurerm_storage_account.storage.primary_access_key
   version                    = "~3"
-
   app_settings = {
     https_only                   = true
     FUNCTIONS_WORKER_RUNTIME     = "node"
@@ -53,7 +53,7 @@ resource "null_resource" "function_app_publish" {
   }
 }
 
-data "azurerm_function_app" "info_app"{
+data "azurerm_function_app" "info_app" {
   name                = azurerm_function_app.functions.name
   resource_group_name = azurerm_resource_group.rg.name
 }
