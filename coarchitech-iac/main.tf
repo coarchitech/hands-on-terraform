@@ -7,7 +7,7 @@ module "gcp_function" {
   project = "coarchitech-318414"
   region  = "us-central1"
 }
-/*
+
 module "azure_function" {
   source  = "./azure/"
-}*/
+}

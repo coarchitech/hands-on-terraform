@@ -40,7 +40,7 @@ resource "azurerm_function_app" "functions" {
 }
 // Se crea el comando para el despliegue usando la libreria de func de npm
 locals {
-  publish_code_command = "cd app && func azure functionapp publish ${azurerm_function_app.functions.name}"
+  publish_code_command = "cd ${abspath(path.module)}/app && func azure functionapp publish ${azurerm_function_app.functions.name}"
 }
 
 resource "null_resource" "function_app_publish" {
