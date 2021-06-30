@@ -11,7 +11,7 @@ class GCPComponent extends React.Component {
     }
 
     componentDidMount(){
-        const apiUrl = 'https://us-central1-coarchitect.cloudfunctions.net/function-from-gcp';
+        const apiUrl = 'https://us-central1-coarchitech-318414.cloudfunctions.net/sandbox-gcp-function';
         fetch(apiUrl, {
             method : 'get',
            /* headers: new Headers({

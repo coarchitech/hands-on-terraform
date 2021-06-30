@@ -11,7 +11,7 @@ class AzureComponent extends React.Component {
     }
 
     componentDidMount(){
-        const apiUrl = 'https://coarchitech.azurewebsites.net/api/helloworld?code=x3sGsCtLbpS0fXdcme3UNs2V5VzneqyPMuJ0aXzfffuEgflJaGxJag==';
+        const apiUrl = 'https://sandbox-hands-on-terraform-app-function.azurewebsites.net/api/hello-world';
         fetch(apiUrl)
         .then((response)=>response.text())
         .then((result) => this.setState({azure:result})            
