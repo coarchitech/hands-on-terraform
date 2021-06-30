@@ -14,7 +14,9 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_bucket_web"></a> [bucket\_web](#module\_bucket\_web) | ./aws/ |  |
+| <a name="module_aws_s3_bucket"></a> [aws\_s3\_bucket](#module\_aws\_s3\_bucket) | ./aws/ |  |
+| <a name="module_azure_function"></a> [azure\_function](#module\_azure\_function) | ./azure/ |  |
+| <a name="module_gcp_function"></a> [gcp\_function](#module\_gcp\_function) | ./gcp/ |  |
 
 ## Resources
 
@@ -28,9 +30,7 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_bucket_arn"></a> [bucket\_arn](#output\_bucket\_arn) | The ARN of the bucket. Will be of format arn:aws:s3:::bucketname |
-| <a name="output_bucket_domain_name"></a> [bucket\_domain\_name](#output\_bucket\_domain\_name) | The bucket domain name. Will be of format bucketname.s3.amazonaws.com |
-| <a name="output_bucket_id"></a> [bucket\_id](#output\_bucket\_id) | The name of the bucket |
-| <a name="output_bucket_regional_domain_name"></a> [bucket\_regional\_domain\_name](#output\_bucket\_regional\_domain\_name) | The bucket region-specific domain name. The bucket domain name including the region name |
-| <a name="output_website_endpoint"></a> [website\_endpoint](#output\_website\_endpoint) | The website endpoint, if the bucket is configured with a website. If not, this will be an empty string. |
+| <a name="output_aws_website_endpoint"></a> [aws\_website\_endpoint](#output\_aws\_website\_endpoint) | The website endpoint, if the bucket is configured with a website. If not, this will be an empty string. |
+| <a name="output_azure_default_function_hostname"></a> [azure\_default\_function\_hostname](#output\_azure\_default\_function\_hostname) | Deployed function app hostname |
+| <a name="output_gcp_https_trigger_url"></a> [gcp\_https\_trigger\_url](#output\_gcp\_https\_trigger\_url) | URL which triggers function execution. Returned only if trigger\_http is used. |
 <!-- END_TF_DOCS -->

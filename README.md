@@ -10,6 +10,9 @@
     - [1.2 Create and Deploy Azure Function App](#12-create-and-deploy-azure-function-app)
       - [1.2.1 Requirements](#121-requirements)
       - [1.2.2 Dependences:](#122-dependences)
+    - [1.3 Create and Deploy GCP Function](#13-create-and-deploy-gcp-function)
+      - [1.3.1 Requirements](#131-requirements)
+      - [1.3.2 Deploy Your GCP Function](#132-deploy-your-gcp-function)
   - [2 Deploy React App](#2-deploy-react-app)
     - [2.1 Update package.json](#21-update-packagejson)
     - [2.2 Compile and Deploy](#22-compile-and-deploy)
@@ -37,7 +40,7 @@ Using the AWS project inside the repository you can create an S3 Bucket configur
 
 Before starting the execution of the project, you need to define the env variables  `AWS_ACCESS_KEY_ID,  AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION`.
 
-```hcl
+```bash
   export AWS_ACCESS_KEY_ID="AKIARGKJ**********"
   export AWS_SECRET_ACCESS_KEY="TJDuL0gcUE3RD0******************"
   export AWS_DEFAULT_REGION="us-east-2"
@@ -115,6 +118,39 @@ Inside Azure folder
 
 Note: You must be logged in azure portal using azure cli or azure pluging and being selected the subscription before running the commands.
 
+### 1.3 Create and Deploy GCP Function
+
+Using the GCP project inside the repository you can Deploy all the infrastructure required for deploy a simple serverless function in GCP. 
+
+#### 1.3.1 Requirements
+- terraform
+- GCP Account 
+  - Project Account
+- Visual Studio Code (recommended) and plugins:
+    - Hashiscorp Terraform   
+
+**Environment Variable**
+Before starting the execution of the project, you need to define the env variable  `GOOGLE_APPLICATION_CREDENTIALS`. Which allows you to connect your terraform project with your GCP Account. 
+
+```bash
+  export GOOGLE_APPLICATION_CREDENTIALS="{path}/{conection-file}"
+```
+Example:
+
+```bash
+  export GOOGLE_APPLICATION_CREDENTIALS="/home/coarchitech/coarchitech-key.json"
+```
+
+
+#### 1.3.2 Deploy Your GCP Function
+
+Once you are in the path **'coarchitech-iac/gcp'** and already has been set the environment variable to GCP account, only need to execute the following commands:
+
+```bash
+    terraform init
+    terraform plan
+    terraform apply
+```
 
 ## 2 Deploy React App
 
@@ -147,6 +183,9 @@ if your bucket id is **laboratory-bucket**, then your deploy script will be:
 
 In the root folder of your react application execute the following command: 
 
-`npm run-script build && npm run-script deploy`
+```bash
+  npm run-script build && npm run-script deploy
+```
+
 
 
