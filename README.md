@@ -183,6 +183,9 @@ if your bucket id is **laboratory-bucket**, then your deploy script will be:
 
 In the root folder of your react application execute the following command: 
 
-`npm run-script build && npm run-script deploy`
+```bash
+  npm run-script build && npm run-script deploy
+```
+
 
 
