@@ -2,17 +2,17 @@
 # Generaciòn de archivo .ZIP con funcion JS 
 data "archive_file" "function" {
   type       = "zip"
-  source_dir = "${abspath(path.module)}/app/function"
-  #output_path = "./gcp/app/function/hello-world.zip"
+  source_dir = "${abspath(path.module)}/app/function"  
   output_path = "${abspath(path.module)}/app/function/${var.resource}.zip"
 }
 # Creaciòn de Storage Bucket para almacenar el .ZIP de la funcion JS
 resource "google_storage_bucket" "bucket" {
   #name          = "storage-stage-function"
-  name          = "${var.environment}-${var.project}-${var.resource}-bucket"
+  name          = "${var.environment}-${var.resource}-bucket"
   storage_class = var.storage_class
   location      = var.region
   force_destroy = var.force_destroy
+  project       = var.project
 }
 # Cargue del archivo .ZIP con la funcion JS en el Storage Bucket
 resource "google_storage_bucket_object" "bucket_stage" {
@@ -22,8 +22,7 @@ resource "google_storage_bucket_object" "bucket_stage" {
 }
 # Creacion de Cloud Funcion a partir del archivo .ZIP del Storage Bucket
 resource "google_cloudfunctions_function" "function_wld" {
-  #name                  = "function-wld"
-  name                  = "${var.environment}-${var.project}-${var.resource}-function"
+  name                  = "${var.environment}-${var.resource}"
   project               = var.project
   region                = var.region
   available_memory_mb   = var.available_memory_mb

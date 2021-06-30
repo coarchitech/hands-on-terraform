@@ -72,9 +72,9 @@ No modules.
 | <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | When deleting a bucket, this boolean option will delete all contained objects. If you try to delete a bucket that contains objects, Terraform will fail that run. | `bool` | `true` | no |
 | <a name="input_member"></a> [member](#input\_member) | Identities that will be granted the privilege in role. | `string` | `"allUsers"` | no |
 | <a name="input_organization"></a> [organization](#input\_organization) | Organization or entity owner of these resources | `string` | `"coarchitech"` | no |
-| <a name="input_project"></a> [project](#input\_project) | Nombre del proyecto en GCP | `string` | `"coarchitech"` | no |
-| <a name="input_region"></a> [region](#input\_region) | Region en GCP | `string` | `"us-central1"` | no |
-| <a name="input_resource"></a> [resource](#input\_resource) | Identifier for resources | `string` | `"google-function"` | no |
+| <a name="input_project"></a> [project](#input\_project) | ID Project ownerin GCP of these resources | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | Region en GCP | `string` | n/a | yes |
+| <a name="input_resource"></a> [resource](#input\_resource) | Identifier for resources | `string` | `"gcp-function"` | no |
 | <a name="input_role"></a> [role](#input\_role) | The role that should be applied | `string` | `"roles/cloudfunctions.invoker"` | no |
 | <a name="input_runtime"></a> [runtime](#input\_runtime) | The runtime in which the function is going to run. Eg. nodejs10, nodejs12, nodejs14, python37, python38, python39, dotnet3, go113, java11, ruby27 | `string` | `"nodejs14"` | no |
 | <a name="input_storage_class"></a> [storage\_class](#input\_storage\_class) | The Storage Class of the new bucket. Supported values include: STANDARD, MULTI\_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE. | `string` | `"STANDARD"` | no |
@@ -84,5 +84,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_https_trigger_url"></a> [https\_trigger\_url](#output\_https\_trigger\_url) | https\_trigger\_url |
+| <a name="output_https_trigger_url"></a> [https\_trigger\_url](#output\_https\_trigger\_url) | URL which triggers function execution. Returned only if trigger\_http is used. |
 <!-- END_TF_DOCS -->

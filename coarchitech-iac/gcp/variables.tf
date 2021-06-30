@@ -1,3 +1,11 @@
+variable "project" {
+  description = "ID Project ownerin GCP of these resources "
+  type        = string  
+}
+variable "region" {
+  description = "Region en GCP"
+  type        = string  
+}
 variable "environment" {
   description = "Environment where resources will be created"
   type        = string
@@ -8,15 +16,10 @@ variable "organization" {
   type        = string
   default     = "coarchitech"
 }
-variable "project" {
-  description = "Project owner of these resources "
-  type        = string
-  default     = "hands-on-terraform"
-}
 variable "resource" {
   description = "Identifier for resources"
   type        = string
-  default     = "google-function"
+  default     = "gcp-function"
 }
 variable "storage_class" {
   description = "The Storage Class of the new bucket. Supported values include: STANDARD, MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE."
@@ -57,9 +60,4 @@ variable "member" {
   description = "Identities that will be granted the privilege in role."
   type        = string
   default     = "allUsers"
-}
-variable "region" {
-  description = "Region en GCP"
-  type        = string
-  default     = "us-central1"
 }

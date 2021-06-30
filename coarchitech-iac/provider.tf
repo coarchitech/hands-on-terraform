@@ -1,5 +1,6 @@
 provider "google" {
-  project = "coarchitect"
+  # ID Project in GCP
+  project = "coarchitech-318414"
   region  = "us-central1"
 }
 provider "aws" {}
