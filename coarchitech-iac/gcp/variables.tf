@@ -63,8 +63,3 @@ variable "region" {
   type        = string
   default     = "us-central1"
 }
-variable "project" {
-  description = "Nombre del proyecto en GCP"
-  type        = string
-  default     = "coarchitech"
-}
