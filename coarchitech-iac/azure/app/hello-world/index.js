@@ -1,6 +1,6 @@
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
-    const responseMessage =  "Hello Coarchitech Community from azure"
+    const responseMessage =  "Hello Coarchitech Community from Azure"
         
     context.res = {
         // status: 200, /* Defaults to 200 */

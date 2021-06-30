@@ -5,7 +5,7 @@
  * @param {!express:Response} res HTTP response context.
  */
  exports.helloWorld = (req, res) => {  
-  let message = req.query.message || req.body.message || 'Hello World from GCP!';
+  let message = req.query.message || req.body.message || 'Hello Coarchitech Community from GCP!';
   res.set('Access-Control-Allow-Origin', "*")
   res.set('Access-Control-Allow-Methods', 'GET, POST')
   res.status(200).send(message);
