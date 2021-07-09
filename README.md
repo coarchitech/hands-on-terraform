@@ -10,6 +10,7 @@
     - [1.2 Create and Deploy Azure Function App](#12-create-and-deploy-azure-function-app)
       - [1.2.1 Requirements](#121-requirements)
       - [1.2.2 Dependences:](#122-dependences)
+      - [Deploying the module:](#deploying-the-module)
     - [1.3 Create and Deploy GCP Function](#13-create-and-deploy-gcp-function)
       - [1.3.1 Requirements](#131-requirements)
       - [1.3.2 Deploy Your GCP Function](#132-deploy-your-gcp-function)
@@ -101,6 +102,7 @@ the app folder contains all the Javascript code for Serverless function
     - Azure Account
     - Azure function
     - Azure Resources
+
 #### 1.2.2 Dependences:
 - Using npm package manager install Azure core tools :
 
@@ -108,8 +110,17 @@ the app folder contains all the Javascript code for Serverless function
     npm install -g azure-functions-core-tools@3 --unsafe-perm true
 
 ```
-- For deploying the module:
+
+Before starting the execution of the project, you need to start session with your Azure Account.
+
+```bash
+  az login
+```
+
+#### Deploying the module:
+
 Inside Azure folder
+
 ```bash
     terraform init
     terraform plan
@@ -189,3 +200,8 @@ In the root folder of your react application execute the following command:
 
 
 
+**Learn more**
+
+* [IaC Infrastructure as Code ](https://www.sophossolutions.com/introduccion-a-la-infraestructura-como-codigo/)
+
+* [Talk of Terraform ](https://www.sophossolutions.com/hablemos-de-terraform/)
