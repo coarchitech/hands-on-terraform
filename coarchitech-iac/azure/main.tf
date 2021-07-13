@@ -47,7 +47,7 @@ resource "null_resource" "function_app_publish" {
   provisioner "local-exec" {
     command = local.publish_code_command
   }
-  depends_on = [local.publish_code_command, azurerm_function_app.functions]
+  depends_on = [azurerm_function_app.functions]
   triggers = {
     publish_code_command = local.publish_code_command
   }
