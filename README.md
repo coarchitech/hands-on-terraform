@@ -202,6 +202,8 @@ In the root folder of your react application execute the following command:
 
 **Learn more**
 
+* [Hands on Terraform: Video](https://www.youtube.com/watch?v=LK0oD11-Aqc)
+
 * [IaC Infrastructure as Code ](https://www.sophossolutions.com/introduccion-a-la-infraestructura-como-codigo/)
 
 * [Talk of Terraform ](https://www.sophossolutions.com/hablemos-de-terraform/)
